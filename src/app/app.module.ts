@@ -18,12 +18,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CdkMenuModule  } from '@angular/cdk/menu';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDividerModule} from '@angular/material/divider';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    DashComponent
+    DashComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,7 @@ import {MatDividerModule} from '@angular/material/divider';
     CdkMenuModule,
     MatDividerModule
   ],
-  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
