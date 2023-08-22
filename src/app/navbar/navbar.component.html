@@ -1,0 +1,70 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>Für unsere Jungs</span>
+      <mat-divider></mat-divider>
+      <button mat-raised-button onclick="alert('Hallo, Welt !')">Click mich</button>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <mat-slide-toggle>Mit Material UI</mat-slide-toggle>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div>
+      Hier ist der Inhalt der NavBar
+    </div>  
+    <button [cdkMenuTriggerFor]="menu" class="example-standalone-trigger">Click me!</button>
+
+<ng-template #menu>
+  <div>bla________</div>
+  <div mat-raised-button class="example-menu" cdkMenu>
+    <button mat-raised-button cdkMenuItem>Refresh</button>
+    <button mat-raised-button cdkMenuItem>Settings</button>
+    <button mat-raised-button cdkMenuItem>Help</button>
+    <button mat-raised-button cdkMenuItem>Sign out</button>
+  </div>
+</ng-template>
+
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+   <mat-icon>menu</mat-icon>
+ </button>
+ 
+ <span class="example-spacer"></span>
+ <button mat-raised-button>Musik</button>
+ <button mat-raised-button>Filme</button>
+ <button mat-raised-button>Orte</button>
+ <br/>
+
+</mat-toolbar>
+<mat-divider vertical="true"></mat-divider>
+<mat-card>
+ <mat-card-header> Menschen</mat-card-header>
+ 
+<mat-card-content>
+ <img style="width: 200px;" src="./assets/hands.png">
+ <p>Die solltet Ihr mal treffen</p>
+</mat-card-content>
+<mat-card-actions>
+ <button mat-raised-button matBadge="88" matBadgeColor="accent">Los</button>
+
+</mat-card-actions>
+</mat-card>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
