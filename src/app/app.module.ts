@@ -18,12 +18,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CdkMenuModule  } from '@angular/cdk/menu';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDividerModule} from '@angular/material/divider';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import {MatChipsModule} from "@angular/material/chips";
 import { FilterRowComponent } from './filter-row/filter-row.component';
 import { FilterChipComponent } from './filter-row/filter-chip/filter-chip.component';
+import { MoviePageComponent } from './pages/movie-page/movie-page.component';
+import { MusicPageComponent } from './pages/music-page/music-page.component';
+import { LocationPageComponent } from './pages/location-page/location-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { FilterChipComponent } from './filter-row/filter-chip/filter-chip.compon
     HomeComponent,
     NotFoundComponent,
     FilterRowComponent,
-    FilterChipComponent
+    FilterChipComponent,
+    MoviePageComponent,
+    MusicPageComponent,
+    LocationPageComponent
   ],
   imports: [
     BrowserModule,

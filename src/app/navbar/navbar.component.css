@@ -16,6 +16,8 @@
   z-index: 1;
 }
 
-.contentCard {
-  width: 300px;
+.matFab {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
 }

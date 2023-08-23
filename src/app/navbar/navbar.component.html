@@ -5,10 +5,10 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Filme</a>
-      <a mat-list-item href="#">Musik</a>
-      <a mat-list-item href="#">Orte</a>
-      <a mat-list-item routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+      <a mat-list-item routerLink="/movies" routerLinkActive="active-link">Filme</a>
+      <a mat-list-item routerLink="/music" routerLinkActive="active-link">Musik</a>
+      <a mat-list-item routerLink="/locations" routerLinkActive="active-link">Orte</a>
+      <a mat-list-item routerLink="/home" routerLinkActive="active-link">Home</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -20,23 +20,13 @@
         (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Für unsere Jungs</span>
+      <span>{{ pageTitle }}</span>
     </mat-toolbar>
-    <!-- <button [cdkMenuTriggerFor]="menu" class="example-standalone-trigger">Click me!</button> -->
-
-  <mat-divider vertical="true"></mat-divider>
-  <app-filter-row></app-filter-row>
-  <mat-card class="contentCard">
-    <mat-card-header> Menschen</mat-card-header>
-    <mat-card-content>
-      <img style="width: 200px;" src="./assets/hands.png">
-      <p>Die solltet Ihr mal treffen</p>
-    </mat-card-content>
-    <mat-card-actions>
-     <button mat-raised-button matBadge="88" matBadgeColor="primary">Los</button>
-    </mat-card-actions>
-  </mat-card>
-
+    <router-outlet></router-outlet>
+    <button mat-fab extended class="matFab">
+      <mat-icon>add</mat-icon>
+      {{ fabText }}
+    </button>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
