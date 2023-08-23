@@ -21,6 +21,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
+import {MatChipsModule} from "@angular/material/chips";
+import { FilterRowComponent } from './filter-row/filter-row.component';
+import { FilterChipComponent } from './filter-row/filter-chip/filter-chip.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
     NavbarComponent,
     DashComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FilterRowComponent,
+    FilterChipComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
     MatBadgeModule,
     MatMenuModule,
     CdkMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    MatChipsModule
   ],
 
   bootstrap: [AppComponent]

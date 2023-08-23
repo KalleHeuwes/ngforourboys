@@ -5,18 +5,14 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3a</a>
+      <a mat-list-item href="#">Filme</a>
+      <a mat-list-item href="#">Musik</a>
+      <a mat-list-item href="#">Orte</a>
       <a mat-list-item routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
     </mat-nav-list>
-    <li><a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <span>Für unsere Jungs</span>
-      <mat-divider></mat-divider>
-      <button mat-raised-button onclick="alert('Hallo, Welt !')">Click mich</button>
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -24,13 +20,25 @@
         (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <mat-slide-toggle>Mit Material UI</mat-slide-toggle>
+      <span>Für unsere Jungs</span>
     </mat-toolbar>
-    <!-- Add Content Here -->
-    <div>
-      Hier ist der Inhalt der NavBar
-    </div>  
-    <button [cdkMenuTriggerFor]="menu" class="example-standalone-trigger">Click me!</button>
+    <!-- <button [cdkMenuTriggerFor]="menu" class="example-standalone-trigger">Click me!</button> -->
+
+  <mat-divider vertical="true"></mat-divider>
+  <app-filter-row></app-filter-row>
+  <mat-card class="contentCard">
+    <mat-card-header> Menschen</mat-card-header>
+    <mat-card-content>
+      <img style="width: 200px;" src="./assets/hands.png">
+      <p>Die solltet Ihr mal treffen</p>
+    </mat-card-content>
+    <mat-card-actions>
+     <button mat-raised-button matBadge="88" matBadgeColor="primary">Los</button>
+    </mat-card-actions>
+  </mat-card>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 <ng-template #menu>
   <div>bla________</div>
@@ -41,32 +49,3 @@
     <button mat-raised-button cdkMenuItem>Sign out</button>
   </div>
 </ng-template>
-
-<mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-   <mat-icon>menu</mat-icon>
- </button>
- 
- <span class="example-spacer"></span>
- <button mat-raised-button [routerLink]="['/home']">Musik</button>
- <button mat-raised-button [routerLink]="['/notfound']">Filme</button>
- <button mat-raised-button>Orte</button>
- <br/>
-
-</mat-toolbar>
-<mat-divider vertical="true"></mat-divider>
-<mat-card>
- <mat-card-header> Menschen</mat-card-header>
- 
-<mat-card-content>
- <img style="width: 200px;" src="./assets/hands.png">
- <p>Die solltet Ihr mal treffen</p>
-</mat-card-content>
-<mat-card-actions>
- <button mat-raised-button matBadge="88" matBadgeColor="accent">Los</button>
-
-</mat-card-actions>
-</mat-card>
-
-  </mat-sidenav-content>
-</mat-sidenav-container>
